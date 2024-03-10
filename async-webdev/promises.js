@@ -1,38 +1,62 @@
 //solution for callback hell (nested callbacks)
 
-const fakeRequest = (url)=>{
+// const fakeRequest = (url)=>{
     
-return new Promise((resolved, rejected)=>{
-    const delay = Math.floor(Math.random()*4500)+500;
+// return new Promise((resolved, rejected)=>{
 
-    setTimeout(()=>{
-        if(delay>4000){
-            rejected('Error');
-        }else{
-            resolved(`here is the data from ${url}`)
-        }
-    },delay)
-})
+//     const delay = Math.floor(Math.random()*4500)+500;
 
+//         setTimeout(()=>{
+//             if(delay>4000){
+//                 rejected('Error');
+//             }else{
+//                 resolved(`here is the data from ${url}`)
+//             }
+//         },delay)
 
-}
+//     })
+
+// }
 
 
 //nested way as a sol to callback hell
 
-fakeRequest('/efef')
-.then((data)=>{
-    console.log(data)
-    return fakeRequest('/efef/page2')
-})
+// fakeRequest('/efef')
+// .then((data)=>{
+//     console.log(data)
+//     return fakeRequest('/efef/page2')
+// })
+// .then(data=>{
+//     console.log(data)
+//     return fakeRequest('/efef/page3')
+// })
+// .then(data=>{
+//     console.log(data)
+//     return fakeRequest('/efef/page4')
+// })
+// .catch((err)=>{
+//     console.log(err)
+// })
+
+const fakeRequest = (url)=>{
+    return new Promise((resolved, rejected)=>{
+        delay = Math.floor(Math.random()*4500+50)
+
+        setTimeout(()=>{
+            if(delay>4000){
+                resolved('Passed')
+            }else{
+                rejected('Rejected')
+            }
+        },delay)
+    })
+}
+
+fakeRequest('/sddsd')
 .then(data=>{
     console.log(data)
-    return fakeRequest('/efef/page3')
+    return fakeRequest('/dsdsd/2')
 })
-.then(data=>{
-    console.log(data)
-    return fakeRequest('/efef/page4')
-})
-.catch((err)=>{
-    console.log(err)
+.catch(err=>{
+    console.log(err.message)
 })
