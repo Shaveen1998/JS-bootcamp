@@ -1,7 +1,7 @@
 //solution for callback hell (nested callbacks)
 
 // const fakeRequest = (url)=>{
-    
+
 // return new Promise((resolved, rejected)=>{
 
 //     const delay = Math.floor(Math.random()*4500)+500;
@@ -17,7 +17,6 @@
 //     })
 
 // }
-
 
 //nested way as a sol to callback hell
 
@@ -38,25 +37,47 @@
 //     console.log(err)
 // })
 
-const fakeRequest = (url)=>{
-    return new Promise((resolved, rejected)=>{
-        delay = Math.floor(Math.random()*4500+50)
+// const fakeRequest = (url) => {
+//   return new Promise((resolved, rejected) => {
+//     delay = Math.floor(Math.random() * 4500 + 50);
 
-        setTimeout(()=>{
-            if(delay>4000){
-                resolved('Passed')
-            }else{
-                rejected('Rejected')
-            }
-        },delay)
-    })
-}
+//     setTimeout(() => {
+//       if (delay > 4000) {
+//         resolved("Passed");
+//       } else {
+//         rejected("Rejected");
+//       }
+//     }, delay);
+//   });
+// };
 
-fakeRequest('/sddsd')
-.then(data=>{
-    console.log(data)
-    return fakeRequest('/dsdsd/2')
-})
-.catch(err=>{
-    console.log(err.message)
-})
+// fakeRequest("/sddsd")
+//   .then((data) => {
+//     console.log(data);
+//     return fakeRequest("/dsdsd/2");
+//   })
+//   .catch((err) => {
+//     console.log(err.message);
+//   });
+
+const promise = new Promise((resolved, rejected) => {
+  const time = Math.floor(Math.random() * 4500 + 50);
+  setTimeout(() => {
+    if (time > 4000) {
+      resolved("pass");
+    } else {
+      rejected("failed");
+    }
+  }, time);
+});
+
+Promise.all([promise])
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.log(error);
+  })
+  .finally(() => {
+    console.log("promise settled");
+  });
