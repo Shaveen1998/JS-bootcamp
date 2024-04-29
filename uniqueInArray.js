@@ -1,17 +1,23 @@
-// const array = ["React", "Node", "React", "Node", "React", "Js"];
-// const uniqueArray = [];
-// for (let i in array) {
-//   if (!uniqueArray.includes(array[i])) {
-//     uniqueArray.push(array[i]);
-//   }
-// }
+class node {
+  constructor(val) {
+    this.val = val;
+    this.right = null;
+    this.left = null;
+  }
+}
 
-// console.log(uniqueArray);
+class BST {
+  constructor() {
+    this.root = null;
+  }
 
-const array = [1, 2, 3, 4, 5, 6, 7];
+  insert(val){
 
-const reducedArray = array.reduce((num) => {
-  return a + num;
-});
+      this.root = this.insertHelper(this.root,val)
+  }
 
-console.log(reducedArray);
+  insertHelper(node,val){
+
+  }
+    
+}
