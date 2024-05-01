@@ -82,5 +82,7 @@ function isPalindrome(str) {
       return false;
     }
   }
-  return ture;
+  return true;
 }
+
+console.log(isPalindrome(strr));
