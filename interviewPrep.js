@@ -49,21 +49,51 @@
 
 //isPalindrome
 
-let str = "abbass";
+// let str = "abbass";
 
-function isPalindrome(str) {
-  // Use two pointers approach
+// function isPalindrome(str) {
+//   // Use two pointers approach
+//   let left = 0;
+//   let right = str.length - 1;
+
+//   while (left < right) {
+//     if (str[left] !== str[right]) {
+//       return false;
+//     }
+//     left++;
+//     right--;
+//   }
+//   return true;
+// }
+
+// console.log(isPalindrome(str));
+
+//longest substring wihout repeating values
+
+function getLongestSubstring(str) {
+  let longestStr = 0;
+  let set = new Set();
+
   let left = 0;
-  let right = str.length - 1;
+  let right = 0;
 
-  while (left < right) {
-    if (str[left] !== str[right]) {
-      return false;
+  while (right < str.length) {
+    let lettet = str[right];
+
+    if (!set.has(letter)) {
+      set.add(letter);
+      longestStr = Math.max(longestStr, set.size);
+      right++;
+    } else {
+      //delete left pointer
+      set.delete(left);
+      left++;
     }
-    left++;
-    right--;
   }
-  return true;
+
+  return longestStr;
 }
 
-console.log(isPalindrome(str));
+//cycling in linked lists
+
+function hasCycle(head) {}
