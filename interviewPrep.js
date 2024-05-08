@@ -90,26 +90,6 @@
 //       left++;
 //     }
 //   }
-// function getLongestSubstring(str) {
-//   let longestStr = 0;
-//   let set = new Set();
-
-//   let left = 0;
-//   let right = 0;
-
-//   while (right < str.length) {
-//     let lettet = str[right];
-
-//     if (!set.has(letter)) {
-//       set.add(letter);
-//       longestStr = Math.max(longestStr, set.size);
-//       right++;
-//     } else {
-//       //delete left pointer
-//       set.delete(str[left]);
-//       left++;
-//     }
-//   }
 
 //   return longestStr;
 // }
@@ -272,9 +252,7 @@ var removeDuplicates = function (nums) {
     }
   }
 
-  return longestStr;
+  return count;
 };
 
-//cycling in linked lists
-
-function hasCycle(head) {}
+console.log(removeDuplicates([1, 1, 5, 4, 8, 8, 4, 77]));
