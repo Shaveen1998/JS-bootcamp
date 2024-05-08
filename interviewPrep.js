@@ -255,4 +255,4 @@ var removeDuplicates = function (nums) {
   return count;
 };
 
-console.log(removeDuplicates([1, 1, 5, 4, 8, 8, 4, 6]));
+console.log(removeDuplicates([1, 1, 5, 4, 8, 8, 4, 77]));
